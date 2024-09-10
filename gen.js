@@ -3,6 +3,11 @@ function gen_img() {
     document.body.style.backgroundImage = `url(${image_gen})`;
 }
 
+fonts = [
+    '"Dela Gothic One"',
+    '"DM Serif Display"',
+    '"Abril Fatface"'  
+];
 function gen_quote() {
     const quote_gen = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://quote-generator-api-six.vercel.app/api/quotes/random?category=motivational");
         fetch(quote_gen)
@@ -15,7 +20,14 @@ function gen_quote() {
         })
 }
 
+function change_font() {
+    var quote = document.getElementById("quote_display");
+    var font_random = fonts[(Math.floor(Math.random() * fonts.length))]
+    quote.style.fontFamily = font_random;
+}
+
 window.onload = () => {
     gen_img();
     gen_quote();
+    change_font();
 };

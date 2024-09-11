@@ -9,14 +9,13 @@ fonts = [
     '"Abril Fatface"'  
 ];
 function gen_quote() {
-    const quote_gen = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://quote-generator-api-six.vercel.app/api/quotes/random?category=motivational");
+    const quote_gen = "https://api.quotable.io/quotes/random?tags=Inspirational";
         fetch(quote_gen)
         .then(response => response.json())
         .then(data => {
-            const quoteData = JSON.parse(data.contents);
             var quote = document.getElementById("quote_display");
-            var quote_generated = quoteData.quote;
-            quote.textContent = quote_generated;
+            quote.textContent = data[0].content
+            console.log(data[0].author)
         })
 }
 

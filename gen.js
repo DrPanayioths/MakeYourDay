@@ -9,13 +9,12 @@ fonts = [
     '"Abril Fatface"'  
 ];
 function gen_quote() {
-    const quote_gen = "https://api.quotable.io/quotes/random?tags=Inspirational";
+    const quote_gen = "https://johndturn-quotableapiproxy.web.val.run/quotes/random?tags=Inspirational";
         fetch(quote_gen)
         .then(response => response.json())
         .then(data => {
             var quote = document.getElementById("quote_display");
             quote.textContent = data[0].content
-            console.log(data[0].author)
         })
 }
 
@@ -30,3 +29,16 @@ window.onload = () => {
     gen_quote();
     change_font();
 };
+
+
+
+// Spacebar Regen
+addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
+        gen_quote();
+        setTimeout(quote_gen_repeater, 500);
+        function quote_gen_repeater() {
+            change_font();
+        }
+    }
+});

@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Morning Quotes - Fast and Simple",
+    "description": "Start Your Day With A Quote, Provided By DrPanayioths",
+    "version": "1.0",
+    "action": {
+        "default_popup": "main.html"
+    },
+
+    "background": {
+        "service_worker": "worker.js"
+    },
+
+    "permissions": [
+        "tabs"
+    ]
+  }

@@ -6,11 +6,9 @@
     "action": {
         "default_popup": "main.html"
     },
-
     "background": {
         "service_worker": "worker.js"
     },
-
     "permissions": [
         "tabs"
     ]

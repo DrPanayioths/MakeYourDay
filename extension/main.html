@@ -13,7 +13,9 @@
 
     <a href="https://drpanayioths.github.io/MakeYourDay/" target="_blank" class="redirect_extension">Go To Website</a>
 
-    <img class="github_img" src="https://github.com/DrPanayioths/MakeYourDay/blob/main/icons/github.png?raw=true">
+    <a href="https://github.com/DrPanayioths/MakeYourDay" target="_blank" class="github_link">
+        <img class="github_img" src="https://github.com/DrPanayioths/MakeYourDay/blob/main/extension/github.png?raw=true">
+    </a>
 </body>
 <style>
     body {
@@ -70,6 +72,33 @@
 
 .redirect_extension:hover {
     width: 250px;
+}
+
+
+
+.github_img {
+    position: absolute;
+    height: 37px;
+    user-select: none;
+    z-index: 1;
+    top: 5px;
+    right: 0.1px;
+    transition: transform .2s;
+    cursor: pointer;
+}
+.github_img:hover {
+    transform: scale(1.2);
+}
+
+.github_link {
+    position: absolute;
+    height: 37px;
+    top: 10px;
+    right: 20px;
+    width: 55px;
+    height: 50px;
+    z-index: 0;
+    border-radius: 10px;
 }
 
 </style>

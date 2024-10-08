@@ -1,7 +1,8 @@
 function gen_img() {
-    const image_gen = "https://picsum.photos/" + window.screen.availWidth + "/" + window.screen.availHeight + "?grayscale";
+    const image_gen = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight + "?grayscale";
     document.body.style.backgroundImage = `url(${image_gen})`;
 }
+
 
 fonts = [
     '"Dela Gothic One"',
@@ -32,13 +33,19 @@ window.onload = () => {
 
 
 
-// Spacebar Regen
-addEventListener("keydown", (event) => {
-    if (event.code === "Space") {
-        gen_quote();
-        setTimeout(quote_gen_repeater, 500);
-        function quote_gen_repeater() {
-            change_font();
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.getElementById('menus');
+
+    function toggleMenu() {
+            menu.classList.toggle('open');
     }
+
+    // Shift + D
+    document.addEventListener('keydown', function(event) {
+        if (event.shiftKey && event.key === 'D') {
+            event.preventDefault();
+            toggleMenu();
+        }
+    });
 });
+

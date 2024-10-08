@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="gen.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Sliding Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <script src="gen.js" defer></script>
 </head> 
 <body>
     <div class="quote" id="quote_display"></div>
-
+    <div class="menu" id="menus"></div>
 </body>
 <style>
     .quote {
@@ -14,10 +18,32 @@
         color: rgb(167, 167, 167);
         font-size: 35px;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         top: 50%;
         text-shadow: 2px 2px 4px black;
     }
-</style>
 
+    .menu {
+        position: absolute;
+        font-family: "DM Serif Display", serif;
+        font-size: 35px;
+        right: 0px;
+        top: 0px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* Smooth transition */
+        text-shadow: 2px 2px 4px black;
+        background-color: rgba(167, 167, 167, 0.507);
+        width: 300px;
+        height: 100%;
+        border-bottom-left-radius: 50px;
+        border-top-left-radius: 50px;
+    }
+
+    .menu.open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
+    }
+</style>
 </html>

@@ -7,3 +7,4 @@ Welcome to **MakeYourDay** – a charming website that brightens up your day wit
 - **Dynamic Wallpapers**: Enjoy a fresh new wallpaper each time you reload the page! 🌄📸
 - **Inspirational Quotes**: Get a new motivational quote with every refresh. 💬✨
 - **Simple and Elegant Design**: A clean, user-friendly interface to uplift your daily experience. 🧩🖌️
+- **Web Browser Extension**: A Simple Chrome Extension that shows you a quote when you open your browser 📜🌐.

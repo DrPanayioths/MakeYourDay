@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Sliding Menu</title>
+    <title>Make Your Day</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <script src="gen.js" defer></script>
 </head> 
 <body>
     <div class="quote" id="quote_display"></div>
-    <div class="menu" id="menus"></div>
+    <div class="menu" id="menus">
+        <button class="menu-author-selector" id="author_selector" onclick="access_menu()">Show Author</button>
+
+    </div>
 </body>
 <style>
     .quote {
@@ -23,6 +26,8 @@
         text-shadow: 2px 2px 4px black;
     }
 
+
+    /* Settings Menu */
     .menu {
         position: absolute;
         font-family: "DM Serif Display", serif;
@@ -45,5 +50,31 @@
         visibility: visible;
         transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
     }
+
+
+    /* Author Selector */
+    .menu-author-selector {
+        position: absolute;
+        font-family: "DM Serif Display", serif;
+        font-size: 35px;
+        right: 5%;
+        background-color: rgba(83, 83, 83, 0.425);
+        color: rgb(49, 49, 49);
+        height: 50px;
+        top: 50px;
+        width: 250px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+    }
+
+    .menu-author-selector:hover {
+        transform: scale(1.05);
+    }
+    
+
+
 </style>
 </html>

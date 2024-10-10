@@ -15,7 +15,12 @@ function gen_quote() {
         .then(response => response.json())
         .then(data => {
             var quote = document.getElementById("quote_display");
-            quote.textContent = data[0].content
+            if (localStorage.getItem("author") === "enabled") {
+                quote.textContent = data[0].content + " - " + data[0].author
+            }
+            else {
+                quote.textContent = data[0].content
+            }
         })
 }
 
@@ -25,16 +30,8 @@ function change_font() {
     quote.style.fontFamily = font_random;
 }
 
-window.onload = () => {
-    gen_img();
-    gen_quote();
-    change_font();
-};
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    const menu = document.getElementById('menus');
+    const menu = document.getElementById("menus");
 
     function toggleMenu() {
             menu.classList.toggle('open');
@@ -49,3 +46,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+
+
+// Settings Menu
+
+function access_menu() {
+    const domain = document.getElementById("author_selector");
+    if (localStorage.getItem("author") === "enabled") {
+        domain.style.backgroundColor = "rgba(255, 0, 0, 0.685)";
+        gen_quote() 
+        localStorage.setItem("author", "disabled")
+    } else {
+        domain.style.backgroundColor = "rgba(0, 128, 0, 0.685)";
+        gen_quote()
+        localStorage.setItem("author", "enabled")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload = () => {
+    gen_img();
+    gen_quote();
+    change_font();
+};

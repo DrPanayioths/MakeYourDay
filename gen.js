@@ -24,6 +24,11 @@ function gen_quote() {
         })
 }
 
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        change_font();
+    }
+});
 function change_font() {
     var quote = document.getElementById("quote_display");
     var font_random = fonts[(Math.floor(Math.random() * fonts.length))]

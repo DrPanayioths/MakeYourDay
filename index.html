@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Day</title>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="gen.js" defer></script>
 </head> 
 <body>
     <div class="quote" id="quote_display"></div>
     <div class="menu" id="menus">
         <button class="menu-author-selector" id="author_selector" onclick="access_menu()">Show Author</button>
+    </div>
+
+
+   <!-- Disclaimer -->
+    <div class="disclaimers" id="disclaimer">
+        <div class="Settings">Settings</div>
+        <div class="shift_d">Shift + D</div>
 
     </div>
 </body>
@@ -74,7 +81,41 @@
         transform: scale(1.05);
     }
     
+    /* Disclaimer Popup */
+    .disclaimers {
+        position: absolute;
+        font-size: 35px;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 5px;
+        height: 80px;
+        width: 400px;
+        border-radius: 5px;
+        background-color: rgba(158, 157, 157, 0.445);
+        transition: 0.4s ease-in-out;
+        display: none;
+    }
 
+    .Settings {
+        position: absolute;
+        color: #ececec;
+        font-size: 30px;
+        bottom: 35px;
+        left: 9px;
+        font-family: "Oswald", sans-serif;
+        user-select: none;
+    }
+
+    .shift_d {
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        position: absolute;
+        bottom: 2px;
+        left: 15px;
+        font-size: 25px;
+        color: #ececec;
+        user-select: none;
+    }
 
 </style>
 </html>

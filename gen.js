@@ -72,7 +72,15 @@ function access_menu() {
 
 
 
-
+// Disclaimer Popup
+function disclaimer() {
+    if (localStorage.getItem("disclaimer") === "showed") {
+        document.getElementById("disclaimer").style.display = "none";
+    } else {
+        document.getElementById("disclaimer").style.display = "block";
+        localStorage.setItem("disclaimer", "showed");
+    }
+}
 
 
 
@@ -98,4 +106,5 @@ window.onload = () => {
     gen_img();
     gen_quote();
     change_font();
+    disclaimer();
 };

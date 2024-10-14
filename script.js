@@ -7,7 +7,15 @@ function gen_img() {
 fonts = [
     '"Dela Gothic One"',
     '"DM Serif Display"',
-    '"Abril Fatface"'  
+    '"Abril Fatface"',
+    '"Cantora One"',
+    '"GFS Didot"',
+    '"Noto Serif JP"',
+    '"Oswald"',
+    '"Rozha One"',
+    '"ADLaM Display"',
+    '"Dosis"'
+
 ];
 function gen_quote() {
     const quote_gen = "https://johndturn-quotableapiproxy.web.val.run/quotes/random?tags=Inspirational";

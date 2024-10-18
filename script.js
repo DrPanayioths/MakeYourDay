@@ -29,6 +29,13 @@ function gen_quote() {
             else {
                 quote.textContent = data[0].content
             }
+
+
+            if (localStorage.getItem("border") === "enabled") {
+                quote.style.backdropFilter = "blur(10px)";
+            } else {
+                quote.style.backdropFilter = "blur(0px)";
+            }
         })
 }
 
@@ -90,6 +97,22 @@ function disclaimer() {
     }
 }
 
+// Border
+function blur_menu() {
+    const quote = document.getElementById("quote_display");
+    const menu = document.getElementById("border_selector");
+
+    if (localStorage.getItem("border") === "enabled") {
+        quote.style.border = "none";
+        quote.style.backdropFilter = "blur(0px)";
+        localStorage.setItem("border", "disabled");
+        menu.style.backgroundColor = "rgba(255, 0, 0, 0.685)";
+    } else {
+        quote.style.backdropFilter = "blur(10px)";
+        localStorage.setItem("border", "enabled");
+        menu.style.backgroundColor = "rgba(0, 128, 0, 0.685)";
+    }
+}
 
 
 

@@ -10,16 +10,17 @@
 </head> 
 <body>
     <div class="quote" id="quote_display"></div>
+    
+    
     <div class="menu" id="menus">
         <button class="menu-author-selector" id="author_selector" onclick="access_menu()">Show Author</button>
+        <button class="menu-border-selector" id="border_selector" onclick="blur_menu()">Blurred Box</button>
     </div>
-
 
    <!-- Disclaimer -->
     <div class="disclaimers" id="disclaimer">
         <div class="Settings">Settings</div>
         <div class="shift_d">Shift + D</div>
-
     </div>
 </body>
 <style>
@@ -32,6 +33,9 @@
         transform: translate(-50%, -50%);
         top: 50%;
         text-shadow: 2px 2px 4px black;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
 
@@ -69,7 +73,7 @@
         background-color: rgba(83, 83, 83, 0.425);
         color: rgb(49, 49, 49);
         height: 50px;
-        top: 50px;
+        top: 47%;
         width: 250px;
         border-radius: 10px;
         outline: none;
@@ -120,6 +124,27 @@
 
     .quote:hover {
         cursor: none;
+    }
+
+    .menu-border-selector {
+        position: absolute;
+        font-family: "DM Serif Display", serif;
+        font-size: 35px;
+        right: 5%;
+        background-color: rgba(83, 83, 83, 0.425);
+        color: rgb(49, 49, 49);
+        height: 50px;
+        top: 52%;
+        width: 250px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+    }
+
+    .menu-border-selector:hover {
+        transform: scale(1.05);
     }
 
 </style>

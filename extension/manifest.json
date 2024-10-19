@@ -10,7 +10,8 @@
         "service_worker": "worker.js"
     },
     "permissions": [
-        "tabs"
+        "tabs",
+        "storage"
     ],
     "icons": {
         "32": "favicon.png"

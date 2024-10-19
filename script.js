@@ -2,11 +2,14 @@ function gen_img() {
     const image_gen = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight + "?grayscale";
     document.body.style.backgroundImage = `url(${image_gen})`;
 }
-
+function handleResize() {
+    gen_img();
+}
+window.addEventListener('resize', gen_img);
 
 fonts = [
     '"Dela Gothic One"',
-    '"DM Serif Display"',
+    '"DM Serif Display"',   
     '"Abril Fatface"',
     '"Cantora One"',
     '"GFS Didot"',

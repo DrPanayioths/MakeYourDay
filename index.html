@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Day</title>
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&display=swap" rel="stylesheet">    
-    <script src="script.js" defer></script>
-    <link rel="icon" href="faviconn.png" type="image/x-icon">
+    <script src="script.js" defer></script>    <link rel="icon" href="faviconn.png" type="image/x-icon">
 </head> 
 <body>
+    <div id="cursor"></div>
     <div class="quote" id="quote_display"></div>
-    
     
     <div class="menu" id="menus">
         <button class="menu-author-selector" id="author_selector" onclick="access_menu()">Show Author</button>
@@ -24,6 +23,9 @@
     </div>
 </body>
 <style>
+    html {
+        cursor: none;
+    }
     .quote {
         position: absolute;
         font-family: "DM Serif Display", serif;
@@ -36,6 +38,16 @@
         border-radius: 10px;
         padding-left: 10px;
         padding-right: 10px;
+    }
+      
+    #cursor  {
+        position: absolute;
+        background-color: black;
+        border: 3px solid rgb(255, 255, 255);
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        z-index: 1;
     }
 
 
@@ -78,8 +90,8 @@
         border-radius: 10px;
         outline: none;
         border: none;
+        cursor: none;
         transition: 0.4s ease-in-out;
-        cursor: pointer;
     }
 
     .menu-author-selector:hover {
@@ -98,7 +110,7 @@
         border-radius: 5px;
         background-color: rgba(158, 157, 157, 0.445);
         transition: 0.4s ease-in-out;
-        display: none   ;
+        display: none;
     }
 
     .Settings {
@@ -140,7 +152,7 @@
         outline: none;
         border: none;
         transition: 0.4s ease-in-out;
-        cursor: pointer;
+        cursor: none;
     }
 
     .menu-border-selector:hover {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Day</title>
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&display=swap" rel="stylesheet">    
+    <!-- Menu Buttons Fonts --> <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>    <link rel="icon" href="faviconn.png" type="image/x-icon">
 </head> 
 <body>
@@ -12,8 +13,10 @@
     <div class="quote" id="quote_display"></div>
     
     <div class="menu" id="menus">
-        <button class="menu-author-selector" id="author_selector" onclick="access_menu()">Show Author</button>
-        <button class="menu-border-selector" id="border_selector" onclick="blur_menu()">Blurred Box</button>
+        <div class="menu_objects">
+            <button class="menu_selector" id="author_selector" onclick="access_menu()">Show Author</button>
+            <button class="menu_selector" id="border_selector" onclick="blur_menu()">Blurred Box</button>
+        </div>
     </div>
 
    <!-- Disclaimer -->
@@ -28,6 +31,12 @@
         width: 100%;
         cursor: none;
     }
+
+    ::selection {
+        background: rgba(0, 0, 0, 0.315);
+        color: white;
+    }
+
     .quote {
         position: absolute;
         font-family: "DM Serif Display", serif;
@@ -57,7 +66,7 @@
     #cursor  {
         position: absolute;
         background-color: black;
-        border: 2px solid rgb(255, 255, 255);
+        border: 3px solid rgb(255, 255, 255);
         height: 5px;
         width: 5px;
         border-radius: 50%;
@@ -71,16 +80,17 @@
         font-family: "DM Serif Display", serif;
         font-size: 35px;
         right: 0px;
-        top: 0px;
+        top: 36%;
+        backdrop-filter: blur(10px);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* Smooth transition */
         text-shadow: 2px 2px 4px black;
-        background-color: rgba(167, 167, 167, 0.507);
+        
         width: 300px;
-        height: 100%;
-        border-bottom-left-radius: 50px;
-        border-top-left-radius: 50px;
+        height: 25%;
+        margin-right: 5px;
+        border-radius: 10px;
     }
 
     .menu.open {
@@ -89,43 +99,46 @@
         transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
     }
 
+    .menu_objects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
 
     /* Author Selector */
-    .menu-author-selector {
-        position: absolute;
-        font-family: "DM Serif Display", serif;
-        font-size: 35px;
-        right: 5%;
+
+    .menu_selector {
+        margin-top: 10px;
+        font-family: "Cal Sans", sans-serif;
+        font-size: 30px;
         background-color: rgba(83, 83, 83, 0.425);
-        color: rgb(49, 49, 49);
-        height: 50px;
-        bottom: 44%;
+        color: wheat;
+        border: 2px solid rgb(53, 53, 53);
+        height: auto;
         width: 250px;
         border-radius: 10px;
         outline: none;
-        border: none;
         cursor: none;
         transition: 0.4s ease-in-out;
     }
 
-    .menu-author-selector:hover {
+    .menu_selector:hover {
         transform: scale(1.05);
     }
     
     /* Disclaimer Popup */
-    .disclaimers {
-        position: absolute;
+    /* .disclaimers {
         font-size: 35px;
-        left: 50%;
         transform: translate(-50%);
-        bottom: 5px;
         height: 80px;
         width: 400px;
         border-radius: 5px;
         background-color: rgba(158, 157, 157, 0.445);
         transition: 0.4s ease-in-out;
         display: none;
-    }
+    } */
 
     .Settings {
         position: absolute;
@@ -148,34 +161,11 @@
         user-select: none;
     }
 
-    .quote:hover {
-        cursor: none;
-    }
-
-    .menu-border-selector {
-        position: absolute;
-        font-family: "DM Serif Display", serif;
-        font-size: 35px;
-        right: 5%;
-        background-color: rgba(83, 83, 83, 0.425);
-        color: rgb(49, 49, 49);
-        height: 50px;
-        bottom: 50%;
-        width: 250px;
-        border-radius: 10px;
-        outline: none;
-        border: none;
-        transition: 0.4s ease-in-out;
-        cursor: none;
-    }
-
-    .menu-border-selector:hover {
-        transform: scale(1.05);
-    }
-
 </style>
 </html>
 
 
 <!-- To-Do: Add Quotes In Different Languages -->
-<!-- To-Do: Change To Minimalistic Design Menu Shift + D, To Only hold 10 margin up and down of the buttons and some px right from the right side -->
+<!-- To-Do: Fix Disclaimer Display Problem -->
+<!-- To-Do: Add Option For Grayscale-No_Grayscale-->
+<!-- To-Do: Fix Color Pallete Settings Menu -->

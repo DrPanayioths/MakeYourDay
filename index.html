@@ -20,9 +20,13 @@
     </div>
 
    <!-- Disclaimer -->
-    <div class="disclaimers" id="disclaimer">
-        <div class="Settings">Settings</div>
-        <div class="shift_d">Shift + D</div>
+    <div class="diclaimer_category">
+        <div class="disclaimers" id="disclaimer">
+            <div class="collums">
+                <div class="Settings">Settings</div>
+                <div class="shift_d">Shift + D</div>
+            </div>
+        </div>
     </div>
 </body>
 <style>
@@ -129,34 +133,39 @@
     }
     
     /* Disclaimer Popup */
-    /* .disclaimers {
+    .diclaimer_category {
+        display: flex;
+    }
+    .disclaimers {
+        margin: 0 auto;
         font-size: 35px;
-        transform: translate(-50%);
         height: 80px;
         width: 400px;
         border-radius: 5px;
-        background-color: rgba(158, 157, 157, 0.445);
+        backdrop-filter: blur(15px);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         transition: 0.4s ease-in-out;
         display: none;
-    } */
+    }
+
+    .collums {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
 
     .Settings {
-        position: absolute;
         color: #ececec;
         font-size: 30px;
-        bottom: 35px;
-        left: 9px;
+
         font-family: "Oswald", sans-serif;
         user-select: none;
     }
-
     .shift_d {
         font-family: "Oswald", sans-serif;
         font-weight: 300;
-        position: absolute;
-        bottom: 2px;
-        left: 15px;
         font-size: 25px;
+        margin-left: 5px;
         color: #ececec;
         user-select: none;
     }
@@ -169,3 +178,4 @@
 <!-- To-Do: Fix Disclaimer Display Problem -->
 <!-- To-Do: Add Option For Grayscale-No_Grayscale-->
 <!-- To-Do: Fix Color Pallete Settings Menu -->
+<!-- To-Do: Special Browser Version (With Search Engine)-->

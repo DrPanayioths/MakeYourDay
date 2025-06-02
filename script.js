@@ -1,6 +1,12 @@
 function gen_img() {
     const image_gen = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight + "?grayscale";
+    const image_gen_no_grayscale = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight;
     document.body.style.backgroundImage = `url(${image_gen})`;
+    if (localStorage.getItem("grayscale") === "on") {
+        document.body.style.backgroundImage = `url(${image_gen})`;
+    } else {
+        document.body.style.backgroundImage = `url(${image_gen_no_grayscale})`;
+    }
 }
 function handleResize() {
     gen_img();
@@ -140,6 +146,18 @@ document.addEventListener('mousemove', (e) => {
     document.getElementById('cursor').style.left = `${e.pageX}px`
     document.getElementById('cursor').style.top = `${e.pageY}px`
 })
+
+// Grayscale Background
+function grayscale() {
+
+    if (localStorage.getItem("grayscale") === "on") {
+        localStorage.setItem("grayscale", "off")
+        gen_img()
+    } else {
+        localStorage.setItem("grayscale", "on")
+        gen_img()
+    }
+}
 
 
 

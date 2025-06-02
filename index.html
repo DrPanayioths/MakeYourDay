@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Day</title>
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
     <!-- Menu Buttons Fonts --> <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>    <link rel="icon" href="faviconn.png" type="image/x-icon">
 </head> 
@@ -16,15 +16,22 @@
         <div class="menu_objects">
             <button class="menu_selector" id="author_selector" onclick="access_menu()">Show Author</button>
             <button class="menu_selector" id="border_selector" onclick="blur_menu()">Blurred Box</button>
+            <button class="menu_selector" id="grayscale_selector" onclick="grayscale()">Grayscale</button>
         </div>
     </div>
+
 
    <!-- Disclaimer -->
     <div class="diclaimer_category">
         <div class="disclaimers" id="disclaimer">
-            <div class="collums">
-                <div class="Settings">Settings</div>
-                <div class="shift_d">Shift + D</div>
+            <div class="row_boxes">
+                <div class="Settings">Settings</div>   
+            </div>
+                         
+            <div class="row_boxes">
+                <button class="button">Shift</button>
+                <span class="plus_symbol">+</span>
+                <button style="width: 30px;" class="button">D</button>
             </div>
         </div>
     </div>
@@ -92,7 +99,8 @@
         text-shadow: 2px 2px 4px black;
         
         width: 300px;
-        height: 25%;
+        height: auto;
+        padding-bottom: 20px;
         margin-right: 5px;
         border-radius: 10px;
     }
@@ -140,7 +148,7 @@
         margin: 0 auto;
         font-size: 35px;
         height: 80px;
-        width: 400px;
+        width: auto;
         border-radius: 5px;
         backdrop-filter: blur(15px);
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -148,27 +156,41 @@
         display: none;
     }
 
-    .collums {
+    .row_boxes {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-left: 10px;
+        margin-right: 10px;
     }
 
     .Settings {
         color: #ececec;
         font-size: 30px;
+        margin: 0 auto;
+        font-family: "Oswald", sans-serif;
+        user-select: none;
+    }
 
-        font-family: "Oswald", sans-serif;
-        user-select: none;
+    .button {
+        height: 30px;
+        width: 60px;
+        color: #ecf0f1;
+        font-size: 17px;
+        background-color: #505050;
+        border: 2px solid #404040;
+        box-shadow: 0px 2px 8px #202020;
+        border-radius: 5px;
+        cursor: none;
     }
-    .shift_d {
-        font-family: "Oswald", sans-serif;
-        font-weight: 300;
-        font-size: 25px;
-        margin-left: 5px;
-        color: #ececec;
-        user-select: none;
+
+    .plus_symbol {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #0b0510;
+        font-family: "WDXL Lubrifont TC", sans-serif;
     }
+
+
 
 </style>
 </html>

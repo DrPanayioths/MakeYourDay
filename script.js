@@ -1,3 +1,5 @@
+// Change fuction that need to automatically load to DOMcontent
+
 function gen_img() {
     const image_gen = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight + "?grayscale";
     const image_gen_no_grayscale = "https://picsum.photos/" + window.innerWidth + "/" + window.innerHeight;
@@ -159,13 +161,29 @@ function grayscale() {
     }
 }
 
+// Search Edition 
+document.addEventListener("DOMContentLoaded", function(){
+    const get_data = window.location.search;
+    const process_data = new URLSearchParams(get_data);
+    const search_metadata = process_data.get('s');
+    const search_sys = document.getElementById("search_system");
 
+    if (search_metadata === "1") {
+        search_sys.style.opacity = "1"
+    }
+})
+// Enter => Search Duckduckgo
+const input_data = document.getElementById("search")
+document.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") { search_query() }
+});
 
-
-
-
-
-
+function search_query() {
+    const base = "https://duckduckgo.com/"
+    let data = input_data.value;
+    let final_url = base + "?q=" + data;
+    location.replace(final_url);
+}
 
 
 

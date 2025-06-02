@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Day</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
     <!-- Menu Buttons Fonts --> <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>    <link rel="icon" href="faviconn.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+
+    <link rel="icon" href="faviconn.png" type="image/x-icon">
 </head> 
 <body>
     <div id="cursor"></div>
+    <div class="search_system" id="search_system">
+        <input class="search_bar" id="search" value="" autocomplete="off">
+        <img style="user-select: none;" onclick="search_query()" src="icons/Search.png">
+    </div>
     <div class="quote" id="quote_display"></div>
     
     <div class="menu" id="menus">
@@ -36,163 +43,6 @@
         </div>
     </div>
 </body>
-<style>
-    html {
-        height: 100%;
-        width: 100%;
-        cursor: none;
-    }
-
-    ::selection {
-        background: rgba(0, 0, 0, 0.315);
-        color: white;
-    }
-
-    .quote {
-        position: absolute;
-        font-family: "DM Serif Display", serif;
-        color: rgb(167, 167, 167);
-        font-size: 35px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        text-shadow: 2px 2px 4px black;
-        border-radius: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        html {
-            cursor: auto;
-        }
-        #cursor {
-            display: none;
-        }
-        .quote {
-            font-size: 20px;
-        }
-    }
-      
-    #cursor  {
-        position: absolute;
-        background-color: black;
-        border: 3px solid rgb(255, 255, 255);
-        height: 5px;
-        width: 5px;
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-
-    /* Settings Menu */
-    .menu {
-        position: absolute;
-        font-family: "DM Serif Display", serif;
-        font-size: 35px;
-        right: 0px;
-        top: 36%;
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* Smooth transition */
-        text-shadow: 2px 2px 4px black;
-        
-        width: 300px;
-        height: auto;
-        padding-bottom: 20px;
-        margin-right: 5px;
-        border-radius: 10px;
-    }
-
-    .menu.open {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
-    }
-
-    .menu_objects {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    /* Author Selector */
-
-    .menu_selector {
-        margin-top: 10px;
-        font-family: "Cal Sans", sans-serif;
-        font-size: 30px;
-        background-color: rgba(83, 83, 83, 0.425);
-        color: wheat;
-        border: 2px solid rgb(53, 53, 53);
-        height: auto;
-        width: 250px;
-        border-radius: 10px;
-        outline: none;
-        cursor: none;
-        transition: 0.4s ease-in-out;
-    }
-
-    .menu_selector:hover {
-        transform: scale(1.05);
-    }
-    
-    /* Disclaimer Popup */
-    .diclaimer_category {
-        display: flex;
-    }
-    .disclaimers {
-        margin: 0 auto;
-        font-size: 35px;
-        height: 80px;
-        width: auto;
-        border-radius: 5px;
-        backdrop-filter: blur(15px);
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-        transition: 0.4s ease-in-out;
-        display: none;
-    }
-
-    .row_boxes {
-        display: flex;
-        flex-direction: row;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .Settings {
-        color: #ececec;
-        font-size: 30px;
-        margin: 0 auto;
-        font-family: "Oswald", sans-serif;
-        user-select: none;
-    }
-
-    .button {
-        height: 30px;
-        width: 60px;
-        color: #ecf0f1;
-        font-size: 17px;
-        background-color: #505050;
-        border: 2px solid #404040;
-        box-shadow: 0px 2px 8px #202020;
-        border-radius: 5px;
-        cursor: none;
-    }
-
-    .plus_symbol {
-        padding-left: 5px;
-        padding-right: 5px;
-        color: #0b0510;
-        font-family: "WDXL Lubrifont TC", sans-serif;
-    }
-
-
-
-</style>
 </html>
 
 

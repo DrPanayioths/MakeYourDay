@@ -8,45 +8,39 @@
     
 </head>
 <body>
-    <div class="title_container">
-        <div class="title_extension">Make Your Day</div>
+    <div class="container">
+        <div class="data_container" style="margin: 0 auto;">
+            <div class="title_extension">Make Your Day</div>
+        </div>
+
     </div>
-
-    <a href="https://drpanayioths.github.io/MakeYourDay/" target="_blank" class="redirect_extension">Go To Website</a>
-
-    <a href="https://github.com/DrPanayioths/MakeYourDay" target="_blank" class="github_link">
-        <img class="github_img" src="https://github.com/DrPanayioths/MakeYourDay/blob/main/extension/github.png?raw=true">
-    </a>
+    
+    <a href="https://makeyourday.vercel.app" target="_blank" class="redirect_extension">Go To Website</a>
 </body>
 <style>
     body {
         background-color: antiquewhite;
-        border-radius: 150px;
         min-height: 200px;
         min-width: 350px;
     }
 
-    .title_container {
-        position: absolute;
-        top: 4%;
-        left: 50%;
+    .container {
+        margin: 0 auto;
         border-radius: 10px;
-        transform: translate(-50%);
         background-color: rgb(253, 248, 241);
         height: 50px;
-        width: 90%;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
     }
 
     .title_extension {
-        position: absolute;
         font-family: "Fjalla One", sans-serif;
         font-weight: 800;
-        top: 5px;
-        left: 50%;
-        transform: translate(-50%);
-        text-align: center;
+        margin: 0 auto;
+        margin-top: 5px;
         font-size: 30px;
-        width: 100%;
+        text-wrap: nowrap;
     }
 
     .redirect_extension {
@@ -78,12 +72,9 @@
 
 
 .github_img {
-    position: absolute;
-    height: 37px;
+    margin-top: 10px;
+    width: 50px;
     user-select: none;
-    z-index: 1;
-    top: 5px;
-    right: 0.1px;
     transition: transform .2s;
     cursor: pointer;
 }
@@ -91,19 +82,6 @@
     transform: scale(1.15);
 }
 
-.github_link {
-    position: absolute;
-    height: 37px;
-    top: 10px;
-    right: 20px;
-    width: 55px;
-    height: 50px;
-    z-index: 0;
-    border-radius: 10px;
-}
-
 </style>
 
-
-<script></script>
 </html>

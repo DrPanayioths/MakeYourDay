@@ -1,183 +1,185 @@
 html {
-    height: 100%;
-    width: 100%;
-    cursor: none;
+  height: 100%;
+  width: 100%;
+  cursor: none;
 }
 
 ::selection {
-    background: rgba(0, 0, 0, 0.315);
-    color: white;
+  background: rgba(0, 0, 0, 0.315);
+  color: white;
 }
 
 .quote {
-    position: absolute;
-    font-family: "DM Serif Display", serif;
-    color: rgb(167, 167, 167);
-    font-size: 35px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    text-shadow: 2px 2px 4px black;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  position: absolute;
+  font-family: "DM Serif Display", serif;
+  color: rgb(167, 167, 167);
+  font-size: 35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  text-shadow: 2px 2px 4px black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @media only screen and (max-width: 768px) {
-    html {
-        cursor: auto;
-    }
-    #cursor {
-        display: none;
-    }
-    .quote {
-        font-size: 20px;
-    }
-}
-    
-#cursor  {
-    position: absolute;
-    background-color: black;
-    border: 3px solid rgb(255, 255, 255);
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    z-index: 1;
+  html {
+    cursor: auto;
+  }
+  #cursor {
+    display: none;
+  }
+  .quote {
+    font-size: 20px;
+  }
 }
 
+#cursor {
+  position: absolute;
+  background-color: black;
+  border: 3px solid rgb(255, 255, 255);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  z-index: 1;
+}
 
 /* Settings Menu */
 .menu {
-    position: absolute;
-    font-family: "DM Serif Display", serif;
-    font-size: 35px;
-    right: 0px;
-    top: 36%;
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* Smooth transition */
-    text-shadow: 2px 2px 4px black;
-    
-    width: 300px;
-    height: auto;
-    padding-bottom: 20px;
-    margin-right: 5px;
-    border-radius: 10px;
+  position: absolute;
+  font-family: "DM Serif Display", serif;
+  font-size: 35px;
+  left: 50%;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s; /* Smooth transition */
+  text-shadow: 2px 2px 4px black;
+
+  height: auto;
+  width: 30%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .menu.open {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease-in-out, visibility 0s; /* Reset transition for visibility */
 }
 
 .menu_objects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 /* Author Selector */
 
 .menu_selector {
-    margin-top: 10px;
-    font-family: "Cal Sans", sans-serif;
-    font-size: 30px;
-    background-color: rgba(83, 83, 83, 0.425);
-    color: wheat;
-    border: 2px solid rgb(53, 53, 53);
-    height: auto;
-    width: 250px;
-    border-radius: 10px;
-    outline: none;
-    cursor: none;
-    transition: 0.4s ease-in-out;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Cal Sans", sans-serif;
+  font-size: 30px;
+  background-color: rgba(83, 83, 83, 0.425);
+  color: wheat;
+  border: 2px solid rgb(53, 53, 53);
+  height: auto;
+  width: 250px;
+  border-radius: 10px;
+  outline: none;
+  cursor: none;
+  transition: 0.4s ease-in-out;
 }
 
 .menu_selector:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Disclaimer Popup */
 .diclaimer_category {
-    display: flex;
+  display: flex;
 }
 .disclaimers {
-    margin: 0 auto;
-    font-size: 35px;
-    height: 80px;
-    width: auto;
-    border-radius: 5px;
-    backdrop-filter: blur(15px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    transition: 0.4s ease-in-out;
-    display: none;
+  margin: 0 auto;
+  font-size: 35px;
+  height: 80px;
+  width: auto;
+  border-radius: 5px;
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: 0.4s ease-in-out;
+  display: none;
 }
 
 .row_boxes {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-    margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .Settings {
-    color: #ececec;
-    font-size: 30px;
-    margin: 0 auto;
-    font-family: "Oswald", sans-serif;
-    user-select: none;
+  color: #ececec;
+  font-size: 30px;
+  margin: 0 auto;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
 }
 
 .button {
-    height: 30px;
-    width: 60px;
-    color: #ecf0f1;
-    font-size: 17px;
-    background-color: #505050;
-    border: 2px solid #404040;
-    box-shadow: 0px 2px 8px #202020;
-    border-radius: 5px;
-    cursor: none;
+  height: 30px;
+  width: 60px;
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: #505050;
+  border: 2px solid #404040;
+  box-shadow: 0px 2px 8px #202020;
+  border-radius: 5px;
+  cursor: none;
 }
 
 .plus_symbol {
-    padding-left: 5px;
-    padding-right: 5px;
-    color: #0b0510;
-    font-family: "WDXL Lubrifont TC", sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #0b0510;
+  font-family: "WDXL Lubrifont TC", sans-serif;
 }
 
 /* Search System */
 .search_system {
-    opacity: 0;
-    display: flex;
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translate(-50%);
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translate(-50%);
 
-    background-color: #212121;
-    outline: none;
-    border: 3px solid #373737;
+  background-color: #212121;
+  outline: none;
+  border: 3px solid #373737;
 
-    color: #e4e3e3;
-    cursor: none;
-    font-size: 16px;
-    height: 30px;
-    width: 450px;
-    border-radius: 6px;
-    padding: 15px 8px 15px 10px;
+  color: #e4e3e3;
+  cursor: none;
+  font-size: 16px;
+  height: 30px;
+  width: 450px;
+  border-radius: 6px;
+  padding: 15px 8px 15px 10px;
 }
 .search_bar {
-    background: none;
-    font-size: large;
-    color: #e4e3e3;
-    outline: none;
-    border: none;
-    width: 450px;
-    cursor: none;
+  background: none;
+  font-size: large;
+  color: #e4e3e3;
+  outline: none;
+  border: none;
+  width: 450px;
+  cursor: none;
 }

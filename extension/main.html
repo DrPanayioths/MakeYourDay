@@ -1,87 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>MakeYourDay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
-    
-</head>
-<body>
-    <div class="container">
-        <div class="data_container" style="margin: 0 auto;">
-            <div class="title_extension">Make Your Day</div>
-        </div>
+    <script src="script.js" defer></script>
 
+    <!-- Title Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Redirect Button -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Selector Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="data_container" style="margin: 0 auto">
+        <div class="title_extension">Make Your Day</div>
+      </div>
     </div>
-    
-    <a href="https://makeyourday.vercel.app" target="_blank" class="redirect_extension">Go To Website</a>
-</body>
-<style>
+
+    <div class="boxs">
+      <div class="selector">
+        Search Mode:
+        <select id="searchMode" class="options" onchange="options_manager()">
+          <option value="searchmode_on">On</option>
+          <option value="searchmode_off">Off</option>
+          <!-- To-Do: Add Random Option -->
+        </select>
+      </div>
+    </div>
+
+    <div class="redirect_extension">
+      <a
+        href="https://makeyourday.vercel.app"
+        target="_blank"
+        style="text-decoration: none"
+      >
+        <span class="text_extension">Quote Website</span>
+      </a>
+    </div>
+  </body>
+  <style>
     body {
-        background-color: antiquewhite;
-        min-height: 200px;
-        min-width: 350px;
+      background-color: #faf3e0;
+      min-height: 200px;
+      min-width: 350px;
     }
 
     .container {
-        margin: 0 auto;
-        border-radius: 10px;
-        background-color: rgb(253, 248, 241);
-        height: 50px;
-        width: 80%;
-        display: flex;
-        flex-direction: row;
+      margin: 0 auto;
+      border-radius: 10px;
+      background-color: rgb(253, 248, 241);
+      height: 50px;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
     }
 
     .title_extension {
-        font-family: "Fjalla One", sans-serif;
-        font-weight: 800;
-        margin: 0 auto;
-        margin-top: 5px;
-        font-size: 30px;
-        text-wrap: nowrap;
+      font-family: "Fjalla One", sans-serif;
+      color: #2e2e2e;
+      font-weight: 800;
+      margin: 0 auto;
+      margin-top: 5px;
+      font-size: 30px;
+      text-wrap: nowrap;
     }
 
     .redirect_extension {
-        position: absolute;
-        height: 40px;
-        width: 200px;
-        bottom: 2%;
-        left: 50%;
-        transform: translate(-50%);
-        border-radius: 50px;
-        background-color: rgba(255, 235, 205, 0.418);
-        cursor: pointer;
-        transition: width .2s;
-        font-family: "Teko", sans-serif;
-        font-weight: 400;
-        font-size: 22px;
-        vertical-align: middle;
-        text-align: center;
-        line-height: 40px;
-        text-decoration: none;
-        color: black;
-        border: solid burlywood 2px;
+      position: absolute;
+      height: 40px;
+      width: 200px;
+      bottom: 2%;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 50px;
+      background-color: #ffe0b2;
+      cursor: pointer;
+      transition: outline 0.3s;
+      font-family: "Teko", sans-serif;
+      font-weight: 400;
+      font-size: 25px;
+      text-align: center;
+      line-height: 40px;
+      text-decoration: none;
+      color: #22140bd2;
+      border: solid burlywood 2px;
+      outline: 2px solid transparent;
+      outline-offset: 0px;
     }
 
-.redirect_extension:hover {
-    width: 250px;
-}
+    .redirect_extension:hover {
+      outline: #a44a3f 2px solid;
+    }
 
+    .text_extension {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
 
+      font-family: "Teko", sans-serif;
+      font-weight: 400;
+      font-size: 25px;
+      color: #22140bd2;
+    }
 
-.github_img {
-    margin-top: 10px;
-    width: 50px;
-    user-select: none;
-    transition: transform .2s;
-    cursor: pointer;
-}
-.github_img:hover {
-    transform: scale(1.15);
-}
+    .github_img {
+      margin-top: 10px;
+      width: 50px;
+      user-select: none;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .github_img:hover {
+      transform: scale(1.15);
+    }
 
-</style>
+    .boxs {
+      font-size: 25px;
+      margin: 0 auto;
+      height: auto;
+      width: 250px;
+      border-radius: 10px;
+    }
 
+    .selector {
+      border-radius: 15px;
+      background-color: #ffe7b3;
+      color: #6a4f2c;
+      margin-top: 5px;
+      text-align: center;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      font-family: "Noto Sans", sans-serif;
+    }
+
+    .options {
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 600;
+      color: #6a4f2c;
+      background-color: #ffe7b3;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      padding: 5px;
+      width: 100px;
+    }
+  </style>
 </html>

@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Make Your Day</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
-    <!-- Menu Buttons Fonts --> <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Abril+Fatface&family=Cal+Sans&family=Cantora+One&family=DM+Serif+Display:ital@0;1&family=Dela+Gothic+One&family=Dosis:wght@200..800&family=GFS+Didot&family=Lexend+Deca:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Oswald:wght@200..700&family=Rozha+One&family=WDXL+Lubrifont+TC&family=Huninn&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js" defer></script>
 
-    <link rel="icon" href="faviconn.png" type="image/x-icon">
-</head> 
-<body>
+    <link rel="icon" href="faviconn.png" type="image/x-icon" />
+  </head>
+  <body>
     <div id="cursor"></div>
     <div class="search_system" id="search_system">
-        <input class="search_bar" id="search" value="" autocomplete="off">
-        <img style="user-select: none;" onclick="search_query()" src="icons/Search.png">
+      <input class="search_bar" id="search" value="" autocomplete="off" />
+      <img
+        style="user-select: none"
+        onclick="search_query()"
+        src="icons/Search.png"
+      />
     </div>
     <div class="quote" id="quote_display"></div>
-    
+
     <div class="menu" id="menus">
-        <div class="menu_objects">
-            <button class="menu_selector" id="author_selector" onclick="access_menu()">Show Author</button>
-            <button class="menu_selector" id="border_selector" onclick="blur_menu()">Blurred Box</button>
-            <button class="menu_selector" id="grayscale_selector" onclick="grayscale()">Grayscale</button>
-        </div>
+      <div class="menu_objects">
+        <button
+          class="menu_selector"
+          id="author_selector"
+          onclick="access_menu()"
+        >
+          Show Author
+        </button>
+
+        <button
+          class="menu_selector"
+          id="border_selector"
+          onclick="blur_menu()"
+        >
+          Blurred Box
+        </button>
+
+        <button
+          class="menu_selector"
+          id="grayscale_selector"
+          onclick="grayscale()"
+        >
+          Grayscale
+        </button>
+      </div>
     </div>
 
-
-   <!-- Disclaimer -->
+    <!-- Disclaimer -->
     <div class="diclaimer_category">
-        <div class="disclaimers" id="disclaimer">
-            <div class="row_boxes">
-                <div class="Settings">Settings</div>   
-            </div>
-                         
-            <div class="row_boxes">
-                <button class="button">Shift</button>
-                <span class="plus_symbol">+</span>
-                <button style="width: 30px;" class="button">D</button>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+      <div class="disclaimers" id="disclaimer">
+        <div class="collum_boxes">
+          <div class="row_boxes">
+            <div class="Settings">Settings:</div>
+            <button class="button">Right Click</button>
+          </div>
 
+          <div class="collum_boxes">
+            <div class="disclaimer_close_button" onclick="hide_disclaimer()">X</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 
 <!-- To-Do: Add Quotes In Different Languages -->

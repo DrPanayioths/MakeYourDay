@@ -59,7 +59,7 @@ html {
   text-shadow: 2px 2px 4px black;
 
   height: auto;
-  width: 30%;
+  width: auto;
   transform: translateX(-50%);
   padding-bottom: 20px;
   border-radius: 10px;
@@ -108,35 +108,49 @@ html {
   display: flex;
 }
 .disclaimers {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
   margin: 0 auto;
   font-size: 35px;
-  height: 80px;
+  height: auto;
   width: auto;
   border-radius: 5px;
   backdrop-filter: blur(15px);
+  border: #21212193 2px solid;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: 0.4s ease-in-out;
-  display: none;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
 }
 
-.row_boxes {
+.collum_boxes {
   display: flex;
   flex-direction: row;
   margin-left: 10px;
   margin-right: 10px;
 }
 
+.row_boxes {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
 .Settings {
   color: #ececec;
   font-size: 30px;
-  margin: 0 auto;
   font-family: "Oswald", sans-serif;
   user-select: none;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 .button {
+  font-family: "Lexend Deca", sans-serif;
   height: 30px;
-  width: 60px;
+  width: auto;
+  margin-top: 10px;
   color: #ecf0f1;
   font-size: 17px;
   background-color: #505050;
@@ -146,11 +160,23 @@ html {
   cursor: none;
 }
 
-.plus_symbol {
+/* PLUS SYMBOL IF NEEDED IN THE FUTURE */
+/* .plus_symbol {
+  margin-top: 7px;
   padding-left: 5px;
   padding-right: 5px;
   color: #0b0510;
   font-family: "WDXL Lubrifont TC", sans-serif;
+} */
+
+.disclaimer_close_button {
+  font-family: "Huninn", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  width: 0px;
+  color: rgb(80, 79, 79);
+  background-color: transparent;
+  border: none;
 }
 
 /* Search System */

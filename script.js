@@ -59,10 +59,15 @@ function gen_quote() {
 gen_quote();
 
 document.addEventListener("keydown", function (event) {
-  if (event.code === "Space") {
+  const get_data = window.location.search;
+  const process_data = new URLSearchParams(get_data);
+  const search_metadata = process_data.get("s");
+
+  if (event.code === "Space" && search_metadata != "1") {
     change_font();
   }
 });
+
 function change_font() {
   var quote = document.getElementById("quote_display");
   var font_random = fonts[Math.floor(Math.random() * fonts.length)];
@@ -77,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("open");
   }
 
-  // Shift + D
+  // Right Click = Menu Toggle
   document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
     toggleMenu();
@@ -171,8 +176,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const search_metadata = process_data.get("s");
   const search_sys = document.getElementById("search_system");
 
+  function settings_modifier() {
+    const search_system = document.getElementById("menus");
+    search_system.style.marginBottom = "80px";
+  }
+
   if (search_metadata === "1") {
     search_sys.style.opacity = "1";
+    settings_modifier();
+
+    // Auto Focus If Alphabetic Character is typed
+    document.addEventListener("keydown", function (event) {
+      const Allchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      if (Allchars.includes(event.key)) {
+        const input = document.getElementById("search");
+        input.focus();
+      }
+    });
   }
 });
 // Enter => Search Duckduckgo

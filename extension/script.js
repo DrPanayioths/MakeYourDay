@@ -1,23 +1,21 @@
-const worker = new Worker("worker.js");
+// First Load Setup
+if (localStorage.getItem("searchMode") === null) {
+  localStorage.setItem("searchMode", "https://makeyourday.vercel.app");
+}
+
+document
+  .getElementById("searchMode")
+  .addEventListener("change", options_manager);
 
 function options_manager() {
   const base = document.getElementById("searchMode");
-  base.addEventListener("change", function () {
-    if (base.value === "searchmode_on") {
-      sender("1");
-    } else if (base.value === "searchmode_off") {
-      sender("0");
-    }
-  });
-}
+  const baseURL = "https://makeyourday.vercel.app";
 
-function sender(message) {
-  worker.postMessage({
-    type: "setUrl",
-    url: `https://makeyourday.vercel.app?s=${message}`,
-  });
+  if (base.value === "searchmode_on") {
+    final = baseURL + "?s=1";
+    localStorage.setItem("searchMode", final);
+  } else if (base.value === "searchmode_off") {
+    final = baseURL + "";
+    localStorage.setItem("searchMode", final);
+  }
 }
-
-worker.onmessage = function (event) {
-  console.log("Worker says:", event.data);
-};

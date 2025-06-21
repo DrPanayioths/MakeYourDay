@@ -180,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const search_system = document.getElementById("menus");
     search_system.style.marginBottom = "80px";
   }
-
   if (search_metadata === "1") {
     search_sys.style.opacity = "1";
     settings_modifier();
@@ -199,7 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const input_data = document.getElementById("search");
 document.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    search_query();
+    if (input_data.value.trim() != "") {
+      search_query();
+    }
   }
 });
 

@@ -210,3 +210,34 @@ function search_query() {
   let final_url = base + "?q=" + data;
   location.replace(final_url);
 }
+
+// Text Style System
+function set_TRANSPARENT_TEXT() {
+  const quote = document.getElementById("quote_display");
+  quote.style.color = "rgba(167, 167, 167, 0)";
+  quote.style.backdropFilter = "blur(20px)";
+}
+
+function set_BLACK_TEXT() {
+  const quote = document.getElementById("quote_display");
+  quote.style.color = "rgba(167, 167, 167)";
+  quote.style.backdropFilter = "blur(0px)";
+}
+
+function change_text_style() {
+  if (localStorage.getItem("style") === "transparent") {
+    localStorage.setItem("style", "black");
+    set_BLACK_TEXT();
+  } else {
+    localStorage.setItem("style", "transparent");
+    set_TRANSPARENT_TEXT();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("style") === "transparent") {
+    set_TRANSPARENT_TEXT();
+  } else {
+    set_BLACK_TEXT();
+  }
+});

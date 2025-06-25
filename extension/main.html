@@ -37,6 +37,15 @@
           <!-- To-Do: Add Random Option -->
         </select>
       </div>
+
+      <div class="selector">
+        Status:
+        <select id="extension_status" class="options">
+          <option value="enable_status">Enable</option>
+          <option value="disable_status">Disable</option>
+          <!-- To-Do: Add Random Option -->
+        </select>
+      </div>
     </div>
 
     <div class="redirect_extension">
@@ -49,6 +58,7 @@
       </a>
     </div>
   </body>
+
   <style>
     body {
       background-color: #faf3e0;
@@ -127,15 +137,15 @@
     }
 
     .boxs {
-      font-size: 25px;
+      font-size: 20px;
       margin: 0 auto;
       height: auto;
-      width: 250px;
+      width: auto;
       border-radius: 10px;
     }
 
     .selector {
-      border-radius: 15px;
+      border-radius: 20px;
       background-color: #ffe7b3;
       color: #6a4f2c;
       margin-top: 5px;
@@ -155,6 +165,7 @@
       border-radius: 5px;
       padding: 5px;
       width: 100px;
+      user-select: none;
     }
   </style>
 </html>

@@ -234,10 +234,44 @@ function change_text_style() {
   }
 }
 
+// Extension Status
+function set_enable() {
+  const quote = document.getElementById("quote_display");
+  quote.style.color = "rgba(167, 167, 167, 0)";
+  quote.style.backdropFilter = "blur(20px)";
+}
+
+function set_disable() {
+  const quote = document.getElementById("quote_display");
+  quote.style.color = "rgba(167, 167, 167)";
+  quote.style.backdropFilter = "blur(0px)";
+}
+
+function extension_status_changer() {
+  // 0 = Disabled, 1 = Enabled
+  if (localStorage.getItem("status") === "disabled") {
+    localStorage.setItem("status", "1");
+    set_enable();
+  } else {
+    localStorage.setItem("status", "0");
+    set_disable();
+  }
+}
+
+// DOM Intialiazer
 document.addEventListener("DOMContentLoaded", function () {
+  // Text Style
   if (localStorage.getItem("style") === "transparent") {
     set_TRANSPARENT_TEXT();
   } else {
     set_BLACK_TEXT();
   }
+
+  // Extension Status
+  if (localStorage.getItem("status") === "1") {
+    set_enable();
+  } else {
+    set_disable();
+  }
 });
+// DOM Intialiazer

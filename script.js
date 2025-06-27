@@ -90,40 +90,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Settings Menu
-document.addEventListener("DOMContentLoaded", function () {
-  // Show Author Interaction
-  const domain = document.getElementById("author_selector");
-  domain.addEventListener("click", function () {
-    let previousColor = domain.style.backgroundColor;
-    domain.style.backgroundColor = "rgba(32, 32, 32, 0.49)";
+if (sessionStorage.getItem("mobile_status" !== "1")) {
+  document.addEventListener("DOMContentLoaded", function () {
+    // Show Author Interaction
+    const domain = document.getElementById("author_selector");
+    domain.addEventListener("click", function () {
+      let previousColor = domain.style.backgroundColor;
+      domain.style.backgroundColor = "rgba(32, 32, 32, 0.49)";
 
-    setTimeout(() => {
-      domain.style.backgroundColor = previousColor;
-    }, 350);
+      setTimeout(() => {
+        domain.style.backgroundColor = previousColor;
+      }, 350);
+    });
+
+    // Blurred Box interaction
+    const border = document.getElementById("border_selector");
+    border.addEventListener("click", function () {
+      let previousColor = border.style.backgroundColor;
+      border.style.backgroundColor = "rgba(32, 32, 32, 0.49)";
+
+      setTimeout(() => {
+        border.style.backgroundColor = previousColor;
+      }, 350);
+    });
   });
 
-  // Blurred Box interaction
-  const border = document.getElementById("border_selector");
-  border.addEventListener("click", function () {
-    let previousColor = border.style.backgroundColor;
-    border.style.backgroundColor = "rgba(32, 32, 32, 0.49)";
-
-    setTimeout(() => {
-      border.style.backgroundColor = previousColor;
-    }, 350);
-  });
-});
-
-function access_menu() {
-  if (localStorage.getItem("author") === "enabled") {
-    gen_quote();
-    localStorage.setItem("author", "disabled");
-  } else {
-    gen_quote();
-    localStorage.setItem("author", "enabled");
+  function access_menu() {
+    if (localStorage.getItem("author") === "enabled") {
+      gen_quote();
+      localStorage.setItem("author", "disabled");
+    } else {
+      gen_quote();
+      localStorage.setItem("author", "enabled");
+    }
   }
 }
-
 // Disclaimer Popup
 document.addEventListener("DOMContentLoaded", function () {
   if (localStorage.getItem("disclaimer") === "showed") {
@@ -137,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function hide_disclaimer() {
   document.getElementById("disclaimer").style.opacity = "0";
 }
-
 // Border
 function blur_menu() {
   const quote = document.getElementById("quote_display");
@@ -275,3 +275,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 // DOM Intialiazer
+
+// Feature Disabler (For Mobiles)
+
+if (window.innerHeight < 1024 && window.innerWidth < 1024) {
+  const desktop_elements = document.getElementById("menus");
+  const disclaimer = document.getElementById("disclaimer_categ");
+  const searchbar = document.getElementById("search_system");
+  desktop_elements.remove();
+  disclaimer.remove();
+  searchbar.remove();
+  sessionStorage.setItem("mobile_status", "1");
+}

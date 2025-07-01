@@ -47,11 +47,9 @@ html {
 
 /* Settings Menu */
 .menu {
-  position: absolute;
+  display: flex;
   font-family: "DM Serif Display", serif;
   font-size: 35px;
-  left: 50%;
-  bottom: 0;
   backdrop-filter: blur(10px);
   opacity: 0;
   visibility: hidden;
@@ -60,7 +58,6 @@ html {
 
   height: auto;
   width: auto;
-  transform: translateX(-50%);
   padding-bottom: 20px;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -78,6 +75,19 @@ html {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+}
+
+/* Seperator System */
+.seperator {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+}
+
+.seperate_ff {
+  margin: 10px;
 }
 
 /* Author Selector */
@@ -108,14 +118,7 @@ html {
   display: flex;
 }
 .disclaimers {
-  position: fixed;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  margin: 0 auto;
   font-size: 35px;
-  height: auto;
-  width: auto;
   border-radius: 5px;
   backdrop-filter: blur(15px);
   border: #21212193 2px solid;
@@ -139,19 +142,18 @@ html {
 
 .Settings {
   color: #ececec;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Oswald", sans-serif;
   user-select: none;
   padding-right: 10px;
   padding-bottom: 5px;
-  visibility: collapse;
 }
 
 .button {
   font-family: "Lexend Deca", sans-serif;
   height: 30px;
   width: auto;
-  margin-top: 10px;
+  margin-top: 5px;
   color: #ecf0f1;
   font-size: 17px;
   background-color: #505050;

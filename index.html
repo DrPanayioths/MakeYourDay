@@ -25,55 +25,71 @@
     </div>
     <div class="quote" id="quote_display"></div>
 
-    <div class="menu" id="menus">
-      <div class="menu_objects">
-        <button
-          class="menu_selector"
-          id="author_selector"
-          onclick="access_menu()"
-        >
-          Show Author
-        </button>
+    <div class="seperator">
+      <div class="seperate_ff">
+        <!-- Disclaimer -->
+        <div class="diclaimer_category" id="disclaimer_categ">
+          <div class="disclaimers" id="disclaimer">
+            <div class="collum_boxes">
+              <div class="row_boxes">
+                <div class="Settings">Settings:</div>
+                <button class="button">Right Click</button>
+              </div>
 
-        <button
-          class="menu_selector"
-          id="border_selector"
-          onclick="blur_menu()"
-        >
-          Blurred Box
-        </button>
-
-        <button
-          class="menu_selector"
-          id="grayscale_selector"
-          onclick="grayscale()"
-        >
-          Grayscale
-        </button>
-
-        <button
-          class="menu_selector"
-          id="text_style_selector"
-          onclick="change_text_style()"
-        >
-          Text Style
-        </button>
-      </div>
-    </div>
-
-    <!-- Disclaimer -->
-    <div class="diclaimer_category" id="disclaimer_categ">
-      <div class="disclaimers" id="disclaimer">
-        <div class="collum_boxes">
-          <div class="row_boxes">
-            <div class="Settings">Settings:</div>
-            <button class="button">Right Click</button>
-          </div>
-
-          <div class="collum_boxes">
-            <div class="disclaimer_close_button" onclick="hide_disclaimer()">
-              X
+              <div class="collum_boxes">
+                <div
+                  class="disclaimer_close_button"
+                  onclick="hide_disclaimer()"
+                >
+                  X
+                </div>
+              </div>
             </div>
+
+            <div class="collum_boxes">
+              <div class="Settings" style="font-size: 20px; margin-left: 5px">
+                Change Font:
+              </div>
+              <button class="button" style="margin-top: 0px">Spacebar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seperate_ff">
+        <div class="menu" id="menus">
+          <div class="menu_objects">
+            <button
+              class="menu_selector"
+              id="author_selector"
+              onclick="access_menu()"
+            >
+              Show Author
+            </button>
+
+            <button
+              class="menu_selector"
+              id="border_selector"
+              onclick="blur_menu()"
+            >
+              Blurred Box
+            </button>
+
+            <button
+              class="menu_selector"
+              id="grayscale_selector"
+              onclick="grayscale()"
+            >
+              Grayscale
+            </button>
+
+            <button
+              class="menu_selector"
+              id="text_style_selector"
+              onclick="change_text_style()"
+            >
+              Text Style
+            </button>
           </div>
         </div>
       </div>

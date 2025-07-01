@@ -277,8 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // DOM Intialiazer
 
 // Feature Disabler (For Mobiles)
-
-if (window.innerHeight < 1024 && window.innerWidth < 1024) {
+if (window.innerHeight < 1024 || window.innerWidth < 1024) {
   const desktop_elements = document.getElementById("menus");
   const disclaimer = document.getElementById("disclaimer_categ");
   const searchbar = document.getElementById("search_system");

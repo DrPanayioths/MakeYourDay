@@ -277,12 +277,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // DOM Intialiazer
 
 // Feature Disabler (For Mobiles)
-if (window.innerHeight < 1024 || window.innerWidth < 1024) {
+if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
   const desktop_elements = document.getElementById("menus");
   const disclaimer = document.getElementById("disclaimer_categ");
   const searchbar = document.getElementById("search_system");
+  const cursor = document.getElementById("cursor");
+
   desktop_elements.remove();
   disclaimer.remove();
   searchbar.remove();
+  cursor.remove();
+
   sessionStorage.setItem("mobile_status", "1");
 }

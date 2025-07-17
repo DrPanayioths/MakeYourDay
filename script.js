@@ -290,3 +290,25 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
 
   sessionStorage.setItem("mobile_status", "1");
 }
+
+// Easter Egg's (Optional)
+document.addEventListener("DOMContentLoaded", function () {
+  let value = new URL(location.href).searchParams.get("l");
+
+  if (value == "1") {
+    const quote_gen =
+      "https://johndturn-quotableapiproxy.web.val.run/quotes/random?tags=love";
+    fetch(quote_gen)
+      .then((response) => response.json())
+      .then((data) => {
+        var quote = document.getElementById("quote_display");
+        if (localStorage.getItem("author") === "enabled") {
+          quote.textContent = data[0].content + " - " + data[0].author;
+        } else {
+          quote.textContent = data[0].content;
+        }
+      });
+  }
+});
+
+// To-Do: Add Easter Eggs in the Main Part :)

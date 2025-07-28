@@ -59,8 +59,8 @@ html {
   height: auto;
   width: auto;
   padding-bottom: 20px;
-  border-radius: 10px;
-  margin-bottom: 5px;
+  border-radius: 50px;
+  margin-bottom: 5%;
 }
 
 .menu.open {
@@ -83,11 +83,7 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 100vh;
-}
-
-.seperate_ff {
-  margin: 10px;
+  height: 98vh;
 }
 
 /* Author Selector */
@@ -117,14 +113,16 @@ html {
 .diclaimer_category {
   display: flex;
 }
+
 .disclaimers {
   font-size: 35px;
-  border-radius: 5px;
-  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  backdrop-filter: blur(20px);
   border: #21212193 2px solid;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   opacity: 1;
   transition: opacity 0.4s ease-in-out;
+  margin: 0 auto;
 }
 
 .collum_boxes {
@@ -172,16 +170,6 @@ html {
   font-family: "WDXL Lubrifont TC", sans-serif;
 } */
 
-.disclaimer_close_button {
-  font-family: "Huninn", sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  width: 0px;
-  color: rgb(80, 79, 79);
-  background-color: transparent;
-  border: none;
-}
-
 /* Search System */
 .search_system {
   opacity: 0;
@@ -212,3 +200,5 @@ html {
   width: 450px;
   cursor: none;
 }
+
+/* To-Do: Add Hover Blur And A Red "X" that when click the Disclaimer close */
